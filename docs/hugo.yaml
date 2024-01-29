@@ -1,0 +1,181 @@
+# Configuration
+baseURL: "https://leibmantech.github.io/"
+title: "Aaron Leibman"
+
+enableRobotsTXT: true
+# enableGitInfo: true
+enableGitInfo: false
+# enableEmoji: false
+hasCJKLanguage: true
+
+services:
+  googleAnalytics:
+    # ID: G-Q4R2WLE26F
+    ID: 
+
+# googleAnalytics: 'UA-302012394-1'
+
+outputs:
+  home: [HTML]
+  page: [HTML]
+  section: [HTML, RSS]
+
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: 🇬🇧 English
+    weight: 1
+    title: Blog
+  de: 
+    languageName: 🇩🇪 German
+    languageCode: DE
+    weight: 2
+    title: Blog
+module:
+  hugoVersion:
+    extended: true
+    min: "0.112.0"
+
+  workspace: hugo.work
+  imports:
+    path: hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+enableInlineShortcodes: true
+
+menu:
+  main:
+
+    # - identifier: showcase
+    #   name: Showcase
+    #   pageRef: /showcase
+    #   weight: 1
+    # - identifier: repositories
+    #   name: Repositories
+    #   pageRef: /repos
+    #   weight: 2
+    # - identifier: blog
+    #   name: Blog
+    #   pageRef: /blog
+    #   weight: 3
+    - identifier: technologies
+      name: Technologies
+      pageRef: /technologies
+      weight: 3
+    - identifier: about
+      name: About
+      pageRef: /about
+      weight: 4
+    - name: Search
+      weight: 5
+      params:
+        type: search
+    - name: GitHub
+      weight: 6
+      url: "https://github.com/"
+      params:
+        icon: github
+
+  sidebar:
+    - identifier: more
+      name: More
+      params:
+        type: separator
+      weight: 1
+    - identifier: about
+      name: "About author"
+      pageRef: "/about"
+      weight: 2
+    - identifier: blog
+      name: "Blog"
+      pageRef: "/blog"
+      weight: 5
+    - identifier: categories
+      name: "Categories"
+      pageRef: "/categories"
+      weight: 4
+    - identifier: hugoDocs
+      name: "Map ↗"
+      url: "#"
+      weight: 3
+
+params:
+  description: Modern, responsive, batteries-included Hugo theme for creating beautiful static websites.
+
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: images/logo.png
+      dark: images/logo-dark.png
+      # width: 40
+      # height: 20
+      # link: /
+    width: wide
+
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: normal
+
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+
+  footer:
+    enable: true
+    displayCopyright: true
+    displayPoweredBy: true
+    width: normal
+
+  displayUpdatedDate: true
+  # dateFormat: "January 2, 2023"
+  dateFormat: "2006 January 02"
+
+  # Search
+  # flexsearch is enabled by default
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      # index page by: content | summary | heading | title
+      index: content
+
+  editURL:
+    enable: true
+    base: "https://leibmantech.github.io"
+
+  blog:
+    list:
+      displayTags: true
+
+  categories:
+    list:
+      displayTags: true    
+
+  comments:
+    enable: false
+    type: giscus
+
+    # https://giscus.app/
+    giscus:
+      repo: imfing/hextra
+      repoId: R_kgDOJ9fJag
+      category: General
+      categoryId: DIC_kwDOJ9fJas4CY7gW
+      # mapping: pathname
+      # strict: 0
+      # reactionsEnabled: 1
+      # emitMetadata: 0
+      # inputPosition: top
+      # lang: en
+
+# taxonomies:
+#   category : "categories"

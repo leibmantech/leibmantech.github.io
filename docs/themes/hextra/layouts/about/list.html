@@ -1,0 +1,300 @@
+{{ define "main" }}
+  <div class='mx-auto flex {{ partial "utils/page-width" . }}'>
+    {{ partial "about-left-sidebar.html" (dict "context" .) }}
+    {{ partial "toc.html" . }}
+    <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+        <!-- {{ partial "breadcrumb.html" . }} -->
+        <div class="content">
+          <div class="breadcrumbline">
+          <span>
+          <a class="bs_ico" href="https://alexsonar.github.io/blog/">{{ partial "utils/icon.html" (dict "name" "home" "attributes" "height=17") }}</a>
+        </span>
+          <span  class="bs_divider"> / </span> 
+          <span class="bc_item">
+            author-vcard 
+          </span>
+          <span  class="bs_divider"> / </span>  
+          <span class="bc_item">
+            @AaronLeibman
+          </span>
+        
+        </div>
+        <!-- {{ range .Params.introduction }}
+        {{ . | markdownify }} <br />
+      {{ end }} -->
+
+        {{ if  eq "🇩🇪 German" .Site.Language.LanguageName  }}
+        
+        
+        {{else}}
+        
+        
+        
+       
+
+        <section id="section-experience" class="home-section wg-experience">
+          <div class="home-section-bg"></div>
+          <div class="container">
+            <div class="row">
+              <div
+                class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+                <h2 class="mb-0">Presently occupied</h2>
+              </div>
+              <div class="col-12 col-lg-8">
+                <div class="row experience">
+                  <div class="col-auto text-center flex-column d-none d-sm-flex">
+                    <div class="row h-50">
+                      <div class="col">&nbsp;</div>
+                      <div class="col">&nbsp;</div>
+                    </div>
+                    <div class="m-2"><span class="badge badge-pill border exp-fill">&nbsp;</span></div>
+                    <div class="row h-50">
+                      <div class="col border-right">&nbsp;</div>
+                      <div class="col">&nbsp;</div>
+                    </div>
+                  </div>
+                  <div class="col py-2">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex align-content-start">
+                          <div class="mr-2 mb-2">
+                            <img src="/images/group_of_companies.png" width="56" height="56" alt="Group of companies"
+                              loading="lazy"></div>
+                          <div>
+                            <div class="section-subheading card-title exp-title text-muted my-0">
+                              BUSINESS & EXECUTIVE ADVISOR
+                            </div>
+                            <div class="section-subheading card-title exp-company text-muted my-0">
+                              Deep-Tech companies at Israel Ecosysrem (NDA)
+                            </div>
+                            <div class="text-muted exp-meta">August 2021 – Present (Part-time)<br>
+                              <span class="middot-divider"></span>
+                              <i class="fa-solid fa-location-dot"></i> <span> Israel</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-text">
+                          <p>Responsibilities include:</p><br>
+                          <ul>
+                            <li>Developing high quality business strategies and plans ensuring their alignment with short-term and long-term objectives.</li>
+                            <li>Research, gather feedback, input, and ideas from expert teams on various topics, analyse and consolidate them into concise summaries to guide decision-making, communications and resolve concerns.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row experience">
+                  <div class="col-auto text-center flex-column d-none d-sm-flex">
+                    <div class="row h-50">
+                      <div class="col border-right">&nbsp;</div>
+                      <div class="col">&nbsp;</div>
+                    </div>
+                    <div class="m-2"><span class="badge badge-pill border">&nbsp;</span></div>
+                    <div class="row h-50">
+                      <div class="col">&nbsp;</div>
+                      <div class="col">&nbsp;</div>
+                    </div>
+                  </div>
+                  <div class="col py-2">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex align-content-start">
+                          <div class="mr-2 mb-2">
+                            <img src="https://odcore.com/favicon/favicon-32x32.png" width="56" height="56"
+                              alt="Odcore" loading="lazy">
+                            </div>
+                          <div>
+                            <div class="section-subheading card-title exp-title text-muted my-0">
+                              coFounder, CEO
+                            </div>
+                            <div class="section-subheading card-title exp-company text-muted my-0">
+                              Odcore (Coloud Development Platform)
+                            </div>
+                            <div class="text-muted exp-meta">Desember 2020 –  Present (Full-time)<br>
+                              <span class="middot-divider"></span>
+                              <i class="fa-solid fa-location-dot"></i><span>  Israel</span>
+                            </div>
+                            <p align="center" >
+                              <a href="https://www.odcore.com/">
+                                <img src="https://www.odcore.com/images/odcore-logo-d.png" alt="company logo odcore.con" width="200"/>
+                              </a>          
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card-text">
+                          <p>Responsibilities include:</p><br>
+                          <ul>
+                            <li>Creates creates Corporate Governance<</li>
+                            <li>Play a crucial and joint role in driving business development efforts with other team members, leveraging strategic thinking and market insights to identify opportunities for growth.</li>
+                            <li>Setting and Executing Organizational Strategy.</li>
+                            <li>Setting Vision, Values, and Corporate Culture</li>
+                            <li>Building the Senior Leadership Team.</li>
+                            <li>Making Capital Allocation Decisions.</li>
+                            <li>Communicating Effectively with All Stakeholders.</li>
+                            <li>Making Capital Allocation Decisions.</li>
+                            <li>Overseeing all operations and business activities to ensure they produce the desired results and are consistent with the overall strategy and mission</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    
+
+
+
+          <section id="section-skills" class="home-section wg-skills">
+            <div class="home-section-bg"></div>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="section-heading col-12 mb-3">
+                  <h2 class="mb-0">Skills</h2>
+                </div>
+                <div class="col-12">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6">
+                      <div class="skill-group-title">Business | Executive | Organisational  </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-users-gear"></i></span>
+                        <span class="skills-name">Strong leadership.</span>
+                        <div class="skills-wrapper" style="border-color:#1565c0">
+                          <div class="skills-percent" style="width:90%;background-color:#1565c0"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fab fa-golang"></i></span>
+                        <span class="skills-name">Decision-making, communications and resolve concerns</span>
+                        <div class="skills-wrapper" style="border-color:#1565c0">
+                          <div class="skills-percent" style="width:97%;background-color:#1565c0"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-server"></i></span>
+                        <span class="skills-name">Coordinator for operational matters</span>
+                        <div class="skills-wrapper" style="border-color:#1565c0">
+                          <div class="skills-percent" style="width:80%;background-color:#1565c0"></div>
+                        </div>
+                      </div>
+
+                    </div><div class="col-12 col-md-6">
+                      <div class="skill-group-title">  </div>
+                    </div>
+                   
+                    <div class="col-12 col-md-6">
+                      <div class="skill-group-title">Technical  </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fab fa-python"></i></span>
+                        <span class="skills-name">Python-based WEB Frameworks (Django, DRF, FastAPI .ext)</span>
+                        <div class="skills-wrapper" style="border-color:#1565c0">
+                          <div class="skills-percent" style="width:10%;background-color:#1565c0"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-table"></i></span>
+                        <span class="skills-name">Python Data Science</span>
+                        <div class="skills-wrapper" style="border-color:#1565c0">
+                          <div class="skills-percent" style="width:22%;background-color:#1565c0"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-microchip"></i></span>
+                        <span class="skills-name">Python Machie Learnig Frameworks and libs (TensorFlow)</span>
+                        <div class="skills-wrapper" style="border-color:#1565c0">
+                          <div class="skills-percent" style="width:30%;background-color:#1565c0"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-database"></i></span>
+                        <span class="skills-name">RDS, SQL-based system </span>
+                        <div class="skills-wrapper" style="border-color:#1565c0">
+                          <div class="skills-percent" style="width:30%;background-color:#1565c0"></div>
+                        </div>
+                      </div>
+                   
+
+                  </div><div class="col-12 col-md-6">
+                    <div class="skill-group-title">  </div>
+                  </div>
+
+
+                    <div class="col-12 col-md-6">
+                      <div class="skill-group-title">Soft</div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-lightbulb"></i></span>
+                        <span class="skills-name">Critical thinking</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:93%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon">
+                        <i class="fas fa-comments"></i>
+                      </span>
+                        <span class="skills-name">Communication</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:30%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content">
+                        <span class="skills-icon">
+                          <i class="fas fa-users-gear"></i>
+                      </span>
+                        <span class="skills-name">Collaboration</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:737%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-route"></i></span>
+                        <span class="skills-name">Problem-solving</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:94%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-champagne-glasses"></i></span>
+                        <span class="skills-name">Adaptability</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:99%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-map"></i></span>
+                        <span class="skills-name">Accountability</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:81%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="skills-name">Analytical Thinking</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:95%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-calendar-days"></i></span>
+                        <span class="skills-name">Time Management</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:96%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                      <div class="skills-content"><span class="skills-icon"><i class="fas fa-book-open"></i></span>
+                        <span class="skills-name">Continuous Learning and Improvement</span>
+                        <div class="skills-wrapper" style="border-color:#f0bf23">
+                          <div class="skills-percent" style="width:32%;background-color:#eeac02"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {{end}}
+          {{ .Content }}
+
+        </div>
+        {{ partial "components/last-updated.html" . }}
+        {{ partial "components/pager.html" . }}
+        <!-- {{ partial "components/comments.html" . }} -->
+      </main>
+    </article>
+  </div>
+{{ end }}

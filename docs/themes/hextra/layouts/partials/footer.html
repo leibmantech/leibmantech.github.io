@@ -1,0 +1,67 @@
+{{- $enableFooterSwitches := .Scratch.Get "enableFooterSwitches" | default false -}}
+{{- $displayThemeToggle := site.Params.theme.displayToggle | default true -}}
+
+{{- $copyright := (T "copyright") | default "© 2023 Alex Sonar." -}}
+
+
+{{- $footerWidth := "max-w-screen-xl" -}}
+{{- with .Site.Params.footer.width -}}
+  {{ if eq . "wide" -}}
+    {{ $footerWidth = "max-w-[90rem]" -}}
+  {{ else if eq . "full" -}}
+    {{ $footerWidth = "max-w-full" -}}
+  {{ end -}}
+{{- end -}}
+
+
+<footer class="hextra-footer bg-gray-100 pb-[env(safe-area-inset-bottom)] dark:bg-neutral-900 print:bg-transparent">
+  {{- if $enableFooterSwitches -}}
+    <div class="mx-auto flex gap-2 py-2 px-4 {{ $footerWidth }}">
+      {{- partial "language-switch.html" (dict "context" .) -}}
+      {{- with $displayThemeToggle }}{{ partial "theme-toggle.html" }}{{ end -}}
+    </div>
+    {{- if or site.IsMultiLingual $displayThemeToggle -}}
+      <hr class="dark:border-neutral-800" />
+    {{- end -}}
+  {{- end -}}
+  <div
+    class="{{ $footerWidth }} mx-auto flex justify-center py-12 pl-[max(env(safe-area-inset-left),1.5rem)] pr-[max(env(safe-area-inset-right),1.5rem)] text-gray-600 dark:text-gray-400 md:justify-start"
+  >
+    <div class="flex w-full flex-col items-center sm:items-start">
+      <!-- {{- if .Site.Params.footer.displayCopyright }}<div class="mt-6 text-xs">{{ $copyright | markdownify }}</div>{{ end }} -->
+    
+      <p class="powered-by copyright-license-text">
+        © 2023 licensed under 
+        <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a> -->
+        CC BY NC ND 4.0
+      </p>
+      
+    
+      <p class="powered-by footer-license-icons">
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+          <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+          <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+          
+            <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+          
+          
+            <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+          
+        </a>
+      </p>
+    
+    
+    </div>
+  </div>
+</footer>
+
+{{- define "theme-credit" -}}
+  <a class="flex text-sm items-center gap-1 text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
+    <span
+      >{{ . | safeHTML }}
+      {{- partial "utils/icon.html" (dict "name" "hextra" "attributes" "height=1em class=\"inline-block ml-1 align-text-bottom\"") -}}
+    </span>
+  </a>
+{{- end -}}
+
+

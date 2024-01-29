@@ -1,0 +1,132 @@
+{{ define "main" }}
+  <div class='mx-auto flex {{ partial "utils/page-width" . }}'>
+    {{ partial "about-left-sidebar.html" (dict "context" .) }}
+    {{ partial "toc.html" . }}
+    <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+        <!-- {{ partial "breadcrumb.html" . }} -->
+        <div class="content">
+          <div class="breadcrumbline">
+          <span>
+          <a class="bs_ico" href="https://alexsonar.github.io/blog/">{{ partial "utils/icon.html" (dict "name" "home" "attributes" "height=17") }}</a>
+        </span>
+          <span  class="bs_divider"> / </span> 
+          <span class="bc_item">
+            author-vcard 
+          </span>
+          <span  class="bs_divider"> / </span>  
+          <span class="bc_item">
+            @AlexSonar
+          </span>
+          <h1>About author</h1>
+        </div>
+
+        <section>
+          <div class="row">
+       
+
+            <div class="sub_h5">
+
+            </div>
+          </div>
+          <div class="row"> 
+            
+<div class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-gray-100 shadow dark:border-neutral-700 dark:bg-neutral-800 dark:text-gray-50 hover:shadow-lg dark:hover:border-neutral-500 dark:hover:bg-neutral-700"ß>
+  <div class="in_card">
+
+
+  <!-- <img alt="Porter" loading="lazy" decoding="async" src="https://repository-images.githubusercontent.com/155893691/aa249c80-fcf3-11ea-93b0-30079e8d7de4" style="object-fit:cover; aspect-ratio:16/9;"> -->
+  <p>
+    <span class="bs_ico label_card">{{ partial "utils/icon.html" (dict "name" "chart-bar" "attributes" "height=17") }}
+
+      <!-- </span> <span> -->
+      Expertise
+    </span>
+  </p>
+  <p class="flex font-semibold gap-2 p-4 selected3">Business consultant</p>
+  <p
+    class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50">
+
+    fields in deep-tech, with targets: tech- strategy valuations and validation, effectiveness, optimisation.
+  </p>
+  <p class="flex font-semibold gap-2 p-4 selected3">Data Scientist</p>
+  <p
+    class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50">
+
+    Data Science and Analytics, research in a certain domains of software development.
+  </p>
+  <p class="flex font-semibold gap-2 p-4 selected3">Researcher</p>
+  <p
+    class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50">
+    Researches in Code Analysis Techniques.
+  </p>
+</div>
+</div>
+
+            <div class="hextra-cards mt-4 gap-4 grid not-prose" style="--rows: 3;" >
+             
+
+              <div class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-gray-100 shadow dark:border-neutral-700 dark:bg-neutral-800 dark:text-gray-50 hover:shadow-lg dark:hover:border-neutral-500 dark:hover:bg-neutral-700"
+             >
+             <div class="in_card">
+              <!-- <img alt="Porter" loading="lazy" decoding="async" src="https://repository-images.githubusercontent.com/155893691/aa249c80-fcf3-11ea-93b0-30079e8d7de4" style="object-fit:cover; aspect-ratio:16/9;"> -->
+              <p>
+                <span class="bs_ico label_card">{{ partial "utils/icon.html" (dict "name" "chart-bar" "attributes" "height=17") }}
+            
+                  Experiences
+                </span>
+              </p>
+              <!-- <p class="flex font-semibold gap-2 p-4 selected3"> Code Analysis with AI sys.</p> -->
+              <p class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50">
+                Code Analysis with AI systems.
+              </p>
+              <!-- <p class="flex font-semibold gap-2 p-4 selected3">Software Design.</p> -->
+              <p
+                class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50">
+                Software Design.
+            </p>
+            
+            </div>   </div>
+
+
+
+            <div class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-gray-100 shadow dark:border-neutral-700 dark:bg-neutral-800 dark:text-gray-50 hover:shadow-lg dark:hover:border-neutral-500 dark:hover:bg-neutral-700" >
+  <!-- <img alt="Porter" loading="lazy" decoding="async" src="https://repository-images.githubusercontent.com/155893691/aa249c80-fcf3-11ea-93b0-30079e8d7de4" style="object-fit:cover; aspect-ratio:16/9;"> -->
+
+  <div class="in_card">
+  <p>
+    <span class="bs_ico label_card">{{ partial "utils/icon.html" (dict "name" "chart-bar" "attributes" "height=17") }}
+
+      <!-- </span> <span> -->
+        Qualifications
+    </span>
+  </p>
+  <!-- <p class="flex font-semibold gap-2 p-4 selected3"> Certified Solution Architect.</p> -->
+  <p class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50">
+    Certified Solution Architect.
+  </p>
+  <!-- <p class="flex font-semibold gap-2 p-4 selected3">Career in software development 22 years.</p> -->
+  <p class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50">
+    Career in software development 22 years.
+  </p>
+</div>
+</div>
+</div>
+
+          
+        </section>
+
+
+      
+
+
+
+          {{ .Content }}
+        </div>
+        {{ partial "components/last-updated.html" . }}
+        {{ partial "components/pager.html" . }}
+        <!-- {{ partial "components/comments.html" . }} -->
+      </main>
+    </article>
+  </div>
+{{ end }}

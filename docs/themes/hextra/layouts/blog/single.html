@@ -1,0 +1,66 @@
+{{ define "main" }}
+  <div class='mx-auto flex {{ partial "utils/page-width" . }}'>
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
+    {{ partial "toc.html" . }}
+    <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+        {{ partial "breadcrumb.html" . }}
+
+   
+
+        <button onclick="myFunction('{{ .Permalink }}')">
+          Copy article link
+          <svg width="16" height="16" viewBox="0 -3 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)"><path d="M1 6.75C1.00066 6.15347 1.23793 5.58155 1.65974 5.15974C2.08155 4.73793 2.65347 4.50066 3.25 4.5H7.75C8.34674 4.5 8.91903 4.73705 9.34099 5.15901C9.76295 5.58097 10 6.15326 10 6.75C10 7.34674 9.76295 7.91903 9.34099 8.34099C8.91903 8.76295 8.34674 9 7.75 9H7V10H7.75C8.61195 10 9.4386 9.65759 10.0481 9.0481C10.6576 8.4386 11 7.61195 11 6.75C11 5.88805 10.6576 5.0614 10.0481 4.4519C9.4386 3.84241 8.61195 3.5 7.75 3.5H3.25C2.38805 3.5 1.5614 3.84241 0.951903 4.4519C0.34241 5.0614 0 5.88805 0 6.75C0 7.61195 0.34241 8.4386 0.951903 9.0481C1.5614 9.65759 2.38805 10 3.25 10H4V9H3.25C2.65347 8.99934 2.08155 8.76207 1.65974 8.34026C1.23793 7.91845 1.00066 7.34653 1 6.75Z" fill="currentColor"></path><path d="M12.75 6H12V7H12.75C13.3467 7 13.919 7.23705 14.341 7.65901C14.7629 8.08097 15 8.65326 15 9.25C15 9.84674 14.7629 10.419 14.341 10.841C13.919 11.2629 13.3467 11.5 12.75 11.5H8.25C7.65326 11.5 7.08097 11.2629 6.65901 10.841C6.23705 10.419 6 9.84674 6 9.25C6 8.65326 6.23705 8.08097 6.65901 7.65901C7.08097 7.23705 7.65326 7 8.25 7H9V6H8.25C7.38805 6 6.5614 6.34241 5.9519 6.9519C5.34241 7.5614 5 8.38805 5 9.25C5 10.112 5.34241 10.9386 5.9519 11.5481C6.5614 12.1576 7.38805 12.5 8.25 12.5H12.75C13.612 12.5 14.4386 12.1576 15.0481 11.5481C15.6576 10.9386 16 10.112 16 9.25C16 8.38805 15.6576 7.5614 15.0481 6.9519C14.4386 6.34241 13.612 6 12.75 6Z" fill="currentColor"></path></g><defs><clipPath id="clip0"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>
+        </button>
+          
+          <script>
+          function myFunction(val) {
+          
+          
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(val);
+            
+            // Alert the copied text
+             alert("Copied the link: " + val);
+          }
+          </script>
+
+        <br>
+        <!-- <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{{ .Title }}</h1> -->
+        
+        {{ with $date := .Date }}
+          <!-- <div class="mt-4 mb-16 text-gray-500 text-sm"> -->
+            <div class="mt-4 mb-16 inline_block">
+            <!-- {{ partial "utils/format-date" $date }} -->
+            {{- if $.Params.authors }}&nbsp;&nbsp;{{ end -}}
+            {{- with $.Params.authors -}}
+              {{- range $i, $author := . -}}
+                {{- if $i }},{{ end -}}
+                {{- if $author.link -}}
+                <span class="inline_block">
+                  <img style="height:auto;" alt="" src="{{ $author.avatar_url }}" width="40" height="40" class="avatar-user width-full border color-bg-default inline_block">
+                </span>
+                  <a href="{{ $author.link }}" target="_blank" class="mx-1 text-current underline [text-underline-position:from-font] decoration-from-font">{{ $author.name }}</a>
+                {{- else -}}
+                  <span class="p-nickname vcard-username inline_block" itemprop="nName">{{ $author.name }}</span>
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+            
+          </div>
+        {{ end }}
+        <span class="inline_block">created at {{ dateFormat "Jan 2, 2006" .Date}}</span>
+        <br>
+        Category: {{ .Params.category }}
+        <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{{ .Title }}</h1>
+        <div class="content">
+          {{ .Content }}
+        </div>
+        {{ partial "components/last-updated.html" . }}
+        {{ .Scratch.Set "reversePagination" true }}
+        {{ partial "components/pager.html" . }}
+        {{ partial "components/comments.html" . }}
+      </main>
+    </article>
+  </div>
+{{ end }}
